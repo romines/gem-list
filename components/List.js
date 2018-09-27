@@ -1,23 +1,34 @@
 import React, { Component } from 'react';
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import ListItem from './ListItem.js'
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
-    const items = [1,2,3,4].map(num => ({key: num, title: `Example ${num}`}))
+    const items = [1,2,3,4,5,6,7,8,9,10].map(num => ({id: num, title: `Example ${num}`}))
     this.state = {
       items
     };
   }
 
+  _removeItem(id) {
+    this.setState({
+      items: this.state.items.filter((item) => item.id !== id)
+    })
+
+  }
+
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
 
-        {this.state.items.map(({key, title}) => <ListItem key={key} title={title} />)}
+        {this.state.items.map(({id, title}) => (<ListItem
+          onDelete={() => this._removeItem(id)}
+          key={id}
+          title={title}
+        />))}
 
-      </View>
+      </ScrollView>
     );
   }
 
@@ -26,8 +37,6 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
     backgroundColor: '#fff',
-    padding: 40
   }
 });
