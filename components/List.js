@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { Component } from 'react'
+import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import ListItem from './ListItem.js'
 
 export default class Login extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     const items = [1,2,3,4,5,6,7,8,9,10].map(num => ({id: num, title: `Example ${num}`}))
     this.state = {
       items
-    };
+    }
   }
 
   _removeItem(id) {
@@ -29,7 +29,7 @@ export default class Login extends Component {
         />))}
 
       </ScrollView>
-    );
+    )
   }
 
 }
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   }
-});
+})

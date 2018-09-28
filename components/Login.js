@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { Alert, Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import React, { Component } from 'react'
+import { Alert, Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 
 export default class Login extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       username: '',
       password: '',
       loginError: false
-    };
-    this._onLoginPress = this._onLoginPress.bind(this);
-    this._toggleLoginError = this._toggleLoginError.bind(this);
+    }
+    this._onLoginPress = this._onLoginPress.bind(this)
+    this._toggleLoginError = this._toggleLoginError.bind(this)
 
   }
 
@@ -22,15 +22,14 @@ export default class Login extends Component {
   _toggleLoginError() {
     this.setState(({ loginError }) => ({ loginError: !loginError}))
   }
-  _onLoginPress() {
 
+  _onLoginPress() {
     if (this.formValid) {
       this.props.onSuccessfulLogin()
     } else {
       this._toggleLoginError()
-      setTimeout(this._toggleLoginError, 4500);
+      setTimeout(this._toggleLoginError, 4500)
     }
-
   }
 
   render() {
@@ -48,6 +47,7 @@ export default class Login extends Component {
               <Text style={styles.inValidForm}>3. Must contain at least 1 special character</Text>
             </View>
           }
+
           <TextInput
             style={[styles.text, styles.input]}
             placeholder="Username"
@@ -74,7 +74,7 @@ export default class Login extends Component {
         </View>
 
       </View>
-    );
+    )
   }
 
 }
@@ -111,4 +111,4 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
   },
-});
+})

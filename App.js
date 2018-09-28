@@ -1,20 +1,20 @@
-import React from 'react';
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import Login from './components/Login.js';
-import List from './components/List.js';
-import Header from './components/Header.js';
+import React from 'react'
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import Login from './components/Login.js'
+import List from './components/List.js'
+import Header from './components/Header.js'
 
 export default class App extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      screen: 'login'
-    };
-    this._navigate = this._navigate.bind(this);
+      screen: 'list'
+    }
+    this._navigate = this._navigate.bind(this)
   }
 
   _navigate () {
-    this.setState({screen: this.state.screen === 'login' ? 'list' : 'login'});
+    this.setState({screen: this.state.screen === 'login' ? 'list' : 'login'})
   }
 
   render() {
@@ -35,7 +35,7 @@ export default class App extends React.Component {
           {screens[this.state.screen].component}
         </View>
       </View>
-    );
+    )
   }
 }
 
@@ -48,4 +48,4 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     justifyContent: 'center',
   },
-});
+})

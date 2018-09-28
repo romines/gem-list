@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import SwipeOut from 'react-native-swipeout';
+import React from 'react'
+import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import SwipeOut from 'react-native-swipeout'
 
 const Delete = (props) => (
   <TouchableOpacity
@@ -13,32 +13,22 @@ const Delete = (props) => (
     />
   </TouchableOpacity>
 
-);
+)
 
-export default class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+export default Login = (props) => (
 
-  render() {
-    return (
-      <SwipeOut right={[{component: <Delete onDelete={this.props.onDelete} />}]} buttonWidth={105}>
-        <View style={styles.container}>
-          <Image
-            style={styles.gem}
-            source={require('../assets/gem.png')}
-          />
-          <Text style={styles.text}>{this.props.title}</Text>
+  <SwipeOut right={[{component: <Delete onDelete={props.onDelete} />}]} buttonWidth={105}>
 
-        </View>
+    <View style={styles.container}>
+      <Image
+        style={styles.gem}
+        source={require('../assets/gem.png')}
+      />
+      <Text style={styles.text}>{props.title}</Text>
+    </View>
 
-      </SwipeOut>
-    );
-  }
-
-}
+  </SwipeOut>
+)
 
 const styles = StyleSheet.create({
   container: {
@@ -66,4 +56,4 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'contain'
   }
-});
+})

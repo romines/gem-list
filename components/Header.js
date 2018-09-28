@@ -1,27 +1,24 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import SwipeOut from 'react-native-swipeout';
+import React from 'react'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
-export default Header = (props) => (
-  <View style={styles.header}>
+export default Header = ({ screens, activeScreen, navigate }) => {
+  const twoCol = activeScreen === 'list'
 
-    {
-      props.activeScreen === 'list' &&
-      <TouchableOpacity onPress={props.navigate}>
-        <Text style={[styles.title, styles.chevron]}>&#8249;</Text>
-      </TouchableOpacity>
-    }
-    <Text style={styles.title}>{props.screens[props.activeScreen].title}</Text>
-    {
-      /* placeholder for easy flexbox layout */
-      props.activeScreen === 'list' &&
-      <TouchableOpacity>
-        <Text style={[styles.chevron, {color: '#017ACD'}]}>&#8249;</Text>
-      </TouchableOpacity>
-    }
-  </View>
+  return (
+    <View style={[styles.header, twoCol && styles.twoColHeader]}>
 
-);
+      { // conditionally show back button
+        twoCol &&
+        <TouchableOpacity onPress={navigate} style={{ flex: 1 }}>
+          <Text style={[styles.title, styles.chevron]}>&#8249;</Text>
+        </TouchableOpacity>
+      }
+
+      <Text style={[styles.title, twoCol && styles.twoColTitle]}>{screens[activeScreen].title}</Text>
+
+    </View>
+  )
+}
 
 const styles = StyleSheet.create({
   header: {
@@ -31,6 +28,9 @@ const styles = StyleSheet.create({
     padding: 20,
     paddingBottom: 0,
     flexDirection: 'row',
+    justifyContent: 'center'
+  },
+  twoColHeader: {
     justifyContent: 'space-between',
   },
   title: {
@@ -39,7 +39,11 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: '600'
   },
+  twoColTitle: {
+    flex: 1,
+    transform: [{translateX: -50}]
+  },
   chevron: {
     fontSize: 60,
   },
-});
+})
