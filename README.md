@@ -16,7 +16,7 @@ front-end
 3. Write a function that accepts the below string, and returns the number of times each word is repeated. Please use JavaScript if you prefer front-end, and Java, Javascript, or C if you prefer back-end. Return the data in this format: [{ “team” : 1}, {“only” : 1}]
 ```javascript
 /*
-“Walmart Technology is reinventing the way the world shops and we’ve only just begun. Our team includes @Walmart Labs in Silicon Valley and Bengaluru, which powers the eCommerce experience, as well as technology teams across data and analytics, retail, back office and more who help power store and digital experiences.”
+“Gemmart Technology is reinventing the way the world shops and we’ve only just begun. Our team includes @Gemmart Labs in Silicon Valley and Bengaluru, which powers the eCommerce experience, as well as technology teams across data and analytics, retail, back office and more who help power store and digital experiences.”
 */
 
 function countOccurrences(str) {
