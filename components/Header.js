@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
-export default Header = ({ screens, activeScreen, navigate }) => {
+export default ({ screens, activeScreen, navigate }) => {
   const twoCol = activeScreen === 'list'
 
   return (

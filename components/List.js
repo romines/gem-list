@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import ListItem from './ListItem.js'
 
-export default class Login extends Component {
+export default class List extends Component {
   constructor(props) {
     super(props)
-    const items = [1,2,3,4,5,6,7,8,9,10].map(num => ({id: num, title: `Example ${num}`}))
+    const nums = [1,2,3,4,5,6,7,8,9,10]
+    // const nums = [...Array(10).keys()]
+    const items = nums.map(num => ({id: num, title: `Example ${num.toString()}`}))
     this.state = {
       items
     }

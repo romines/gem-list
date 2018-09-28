@@ -1,5 +1,5 @@
 import React from 'react'
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Login from './components/Login.js'
 import List from './components/List.js'
 import Header from './components/Header.js'
@@ -8,7 +8,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      screen: 'list'
+      screen: 'login'
     }
     this._navigate = this._navigate.bind(this)
   }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import SwipeOut from 'react-native-swipeout'
 
 const Delete = (props) => (
@@ -15,7 +15,7 @@ const Delete = (props) => (
 
 )
 
-export default Login = (props) => (
+export default (props) => (
 
   <SwipeOut right={[{component: <Delete onDelete={props.onDelete} />}]} buttonWidth={105}>
 
